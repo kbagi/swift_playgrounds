@@ -118,27 +118,21 @@ class SetCard : UIView {
 }
 
 var view1  = SetCard(frame: CGRect(x: 0, y: 0, width: 200, height: 350));
-
 view1.number = 1;
 
 var view2  = SetCard(frame: CGRect(x: 0, y: 0, width: 200, height: 350));
-
 view2.number = 2;
 
 var view3  = SetCard(frame: CGRect(x: 0, y: 0, width: 200, height: 350));
-
 view3.number = 3;
 
 view1.backgroundColor = UIColor.whiteColor()
-
 view1.setNeedsDisplay();
 
 view2.backgroundColor = UIColor.whiteColor()
-
 view2.setNeedsDisplay();
 
 view3.backgroundColor = UIColor.whiteColor()
-
 view3.setNeedsDisplay();
 
 
