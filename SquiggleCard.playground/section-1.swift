@@ -73,66 +73,74 @@ class SetCard : UIView {
         //CGContextClipToRect(UIGraphicsGetCurrentContext(), smallRect);
         
         var point1 = CGPoint(
-            x: smallRect.minX + (smallRect.width * 0.1),
-            y: smallRect.minY + (smallRect.height * 0.2))
+            x: smallRect.minX + (smallRect.width * 0.05),
+            y: smallRect.minY + (smallRect.height * 0.4))
         var point2 = CGPoint(
-            x: smallRect.maxX - (smallRect.width * 0.1),
-            y: smallRect.minY + (smallRect.height * 0.2))
+            x: smallRect.maxX - (smallRect.width * 0.05),
+            y: smallRect.minY + (smallRect.height * 0.1))
         var point3 = CGPoint(
-            x: smallRect.maxX - (smallRect.width * 0.1),
-            y: smallRect.minY + (smallRect.height * 0.8))
+            x: smallRect.maxX - (smallRect.width * 0.05),
+            y: smallRect.minY + (smallRect.height * 0.9))
         var point4 = CGPoint(
-            x: smallRect.minX + (smallRect.width * 0.1),
-            y: smallRect.minY + (smallRect.height * 0.8))
+            x: smallRect.minX + (smallRect.width * 0.05),
+            y: smallRect.minY + (smallRect.height * 0.9))
         
         var point1a = CGPoint(
-            x: point1.x * 3,
-            y: point1.y / 1.2)
+            x: point1.x,
+            y: point1.y)
         var point1b = CGPoint(
-            x: point2.x / 2,
-            y: point2.y * 1.2)
-        
+            x: point1.x,
+            y: point1.y)
         var point2a = CGPoint(
-            x: point2.x * 1.2,
-            y: point2.y * 1.2)
+            x: Double(b * 0.9),
+            y: Double(b * 1.1))
         var point2b = CGPoint(
-            x: point2.x / 2,
-            y: point2.y * 1.2)
-        var point3a = CGPoint(x: 1.2, y: 1.2)
-        var point3b = CGPoint(x: 1.2, y: 1.2)
+            x: Double(b * 0.9),
+            y: Double(b * 1.1))
+        var point3a = CGPoint(
+            x: point3.x,
+            y: point3.y)
+        var point3b = CGPoint(
+            x: point3.x,
+            y: point3.y)
+        var point4a = CGPoint(
+            x: point4.x,
+            y: point4.y)
+        var point4b = CGPoint(
+            x: point4.x,
+            y: point4.y)
         
-        var point4a = CGPoint(x: 1.2, y: 1.2)
-        var point4b = CGPoint(x: 1.2, y: 1.2)
-        
-       
         
         var bpath = UIBezierPath()
         //bpath.addClip()
         //bpath.moveToPoint(CGPoint(x: a, y: 2 * b))
         bpath.moveToPoint(point1)
-        bpath.addCurveToPoint(point2, controlPoint1: point1a, controlPoint2: point1b)
+        bpath.addCurveToPoint(point2, controlPoint1: point2a, controlPoint2: point2b)
+        bpath.addCurveToPoint(point3, controlPoint1: point3a, controlPoint2: point3b)
+        //bpath.addCurveToPoint(point4, controlPoint1: point3a, controlPoint2: point3b)
+        //bpath.addCurveToPoint(point1, controlPoint1: point4a, controlPoint2: point4b)
         //bpath.addLineToPoint(point2)
-         bpath.addQuadCurveToPoint(point3, controlPoint: point2a)
+        //bpath.addQuadCurveToPoint(point3, controlPoint: point2a)
         //(point3, controlPoint1: pointa2, controlPoint2: pointa2)
         //bpath.addLineToPoint(point3)
-        bpath.addLineToPoint(point4)
-        bpath.addLineToPoint(point1)
-
-        
-//
+        bpath.addCurveToPoint(point4, controlPoint1: point4a, controlPoint2: point4b)
+        bpath.addCurveToPoint(point1, controlPoint1: point1a, controlPoint2: point1b)
         
         
-//        bpath.addLineToPoint(<#point: CGPoint#>)
-//                    UIColor.redColor().setStroke()
+        //
         
-                    bpath.stroke()
+        
+        //        bpath.addLineToPoint(<#point: CGPoint#>)
+        //                    UIColor.redColor().setStroke()
+        
+        bpath.stroke()
         
         // Draw symbols
-//        for r in symbols{
-//            var path = UIBezierPath(roundedRect: r, cornerRadius: 30)
-//            UIColor.redColor().setStroke()
-//            path.stroke()
-//        }
+        //        for r in symbols{
+        //            var path = UIBezierPath(roundedRect: r, cornerRadius: 30)
+        //            UIColor.redColor().setStroke()
+        //            path.stroke()
+        //        }
     }
 }
 
